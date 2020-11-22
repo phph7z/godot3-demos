@@ -7,6 +7,7 @@ onready var sprite = $AnimatedSprite
 onready var stats = $Stats
 onready var playerDetectionZone = $PlayerDetectionZone
 onready var hurtbox = $HurtBox
+onready var softCollision = $SoftCollision
 
 const DeathEffect = preload("res://EnemyDeathEffect.tscn")
 
@@ -42,7 +43,9 @@ func _physics_process(delta):
 			else:
 				state = IDLE
 			sprite.flip_h = velocity.x < 0
-		
+	
+	if softCollision.is_colliding():
+		velocity += softCollision.get_push_vector() * delta * 400
 	velocity = move_and_slide(velocity)
 
 
