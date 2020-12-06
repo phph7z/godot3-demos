@@ -4,7 +4,7 @@ export var speed = 10
 export var acceleration = 5
 export var gravity = 0.98
 export var jump_power = 30
-export var mouse_sensitivity = 0.3
+export var mouse_sensitivity = 0.2
 
 onready var head = $Head
 onready var camera = $Head/Camera

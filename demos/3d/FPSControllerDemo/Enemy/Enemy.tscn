@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.00784314, 0.843137, 0.313726, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.705882, 0.756863, 0.101961, 1 )
+
+[sub_resource type="CapsuleShape" id=5]
+
+[node name="Enemy" type="KinematicBody"]
+
+[node name="Body" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="Head" type="MeshInstance" parent="."]
+transform = Transform( 0.212498, 0, 0, 0, 0.169566, 0, 0, 0, 0.71104, 0, 0.970266, 0.859139 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 5 )
