@@ -1,9 +1,9 @@
 extends Spatial
 
+func _on_GoalDetector_body_entered(body, goal_id):
+	print("Player " + str(goal_id) + " has score a goal!")
+	get_tree().call_group("gane_pieces", "freeze")
+	$Timer.start()
 
-func _on_GoalDetector_body_entered(body, extra_arg_0):
-	if body.name == 'Ball':
-		if extra_arg_0 == 1:
-			print("goal for green")
-		elif extra_arg_0 == 2:
-			print("goal for blue")
+func _on_Timer_timeout():
+	get_tree().call_group("gane_pieces", "reset")
