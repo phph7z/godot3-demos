@@ -10,6 +10,7 @@ func reset():
 	axis_lock_linear_x = false
 	axis_lock_linear_y = false
 	axis_lock_linear_z = false
+	
 
 func freeze():
 	axis_lock_linear_x = true
