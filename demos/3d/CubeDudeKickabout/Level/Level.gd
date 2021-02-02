@@ -6,13 +6,13 @@ var player2_score = 0
 export var target_score = 2
 
 func _on_GoalDetector_body_entered(body, goal_id):
-	get_tree().call_group("gane_pieces", "freeze")
+	get_tree().call_group("game_pieces", "freeze", goal_id)
 	$Timer.start()
 	update_score(goal_id)
 	$Airhorn.play()
 
 func _on_Timer_timeout():
-	get_tree().call_group("gane_pieces", "reset")
+	get_tree().call_group("game_pieces", "reset")
 
 func update_score(player):
 	var new_score
