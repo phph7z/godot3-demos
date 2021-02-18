@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.490196, 0.94902, 0.87451, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+
+[node name="BystanderSpawner" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0836449, 0, 4 )
