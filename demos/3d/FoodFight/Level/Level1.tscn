@@ -140,4 +140,7 @@ transform = Transform( -5.24537e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -5.24537e-08, -
 [node name="Spawners" type="Node" parent="." index="4"]
 
 [node name="BystanderSpawner" parent="Spawners" index="0" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -29.5769 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -30 )
+
+[node name="BystanderSpawner2" parent="Spawners" index="1" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 1.2, 30 )
