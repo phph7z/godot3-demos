@@ -29,3 +29,5 @@ transform = Transform( -0.46778, -0.787042, 0.402178, -0.435691, 0.60124, 0.6698
 
 [node name="Player" parent="Players" instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 6.05929, 0.369069, 4.64099 )
+
+[node name="Robots" type="Node" parent="."]
