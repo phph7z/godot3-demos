@@ -3,9 +3,12 @@ extends KinematicBody
 export var mouse_sensitivity = 0.5
 
 onready var camera = $Camera
+onready var character_mover = $CharacterMover
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	character_mover.init(self)
+
 
 func _process(delta):
 	if Input.is_action_just_pressed("exit"):
@@ -20,6 +23,10 @@ func _process(delta):
 		move_direction += Vector3.LEFT
 	if Input.is_action_pressed("move_right"):
 		move_direction += Vector3.RIGHT
+	character_mover.set_move_direction(move_direction)
+	if Input.is_action_just_pressed("jump"):
+		character_mover.jump()
+
 
 func _input(event):
 	if event is InputEventMouseMotion:
