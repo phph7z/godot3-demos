@@ -9,7 +9,7 @@ var damage = 1
 func set_damage(_damage:int):
 	damage = _damage
 	
-func set_bodies_to_eclude(_bodies_to_exclude: Array):
+func set_bodies_to_exclude(_bodies_to_exclude: Array):
 	bodies_to_exclude = _bodies_to_exclude
 	
 func fire():

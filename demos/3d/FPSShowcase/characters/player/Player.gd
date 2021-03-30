@@ -27,11 +27,14 @@ func _ready():
 	character_mover.init(self)
 	health_manager.init()
 	health_manager.connect("dead", self, "kill")
+	weapon_manager.init($Camera/FirePoint, [self])
 
 
 func _process(delta):
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
 		
 	if dead:
 		return
@@ -48,6 +51,8 @@ func _process(delta):
 	character_mover.set_move_direction(move_direction)
 	if Input.is_action_just_pressed("jump"):
 		character_mover.jump()
+		
+	weapon_manager.attack(Input.is_action_just_pressed("attack"), Input.is_action_pressed("attack"))
 
 
 func _input(event):
