@@ -33,7 +33,11 @@ func init(_fire_point: Spatial, _bodies_to_exclude: Array):
 	for bullet_emitter in bullet_emitters:
 		bullet_emitter.set_damage(damage)
 		bullet_emitter.set_bodies_to_exclude(_bodies_to_exclude)
-		
+
+
+func rand_scatter_rad(angle: float):
+	return rand_range(0, 2 * PI * (angle / 360)) - 2 * PI * (angle / 720)
+
 
 func attack(attack_input_just_pressed: bool, attack_input_held: bool):
 	if !can_attack:
@@ -54,6 +58,10 @@ func attack(attack_input_just_pressed: bool, attack_input_held: bool):
 	var start_transform = bullet_emitters_base.global_transform
 	bullet_emitters_base.global_transform = fire_point.global_transform
 	for bullet_emitter in bullet_emitters:
+		if name == "Shotgun":
+			print(rand_scatter_rad(5))
+			bullet_emitter.rotation.x = rand_scatter_rad(5)
+			bullet_emitter.rotation.y = rand_scatter_rad(5)
 		bullet_emitter.fire()
 	bullet_emitters_base.global_transform = start_transform
 	animation_player.stop()
