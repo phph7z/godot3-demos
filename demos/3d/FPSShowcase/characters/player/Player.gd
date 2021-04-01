@@ -72,6 +72,7 @@ func _input(event):
 
 func hurt(damage, direction):
 	health_manager.hurt(damage, direction)
+	print("hit")
 
 
 func heal(amount):
